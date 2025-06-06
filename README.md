@@ -1,0 +1,1 @@
+# polish_election_analysis_app
