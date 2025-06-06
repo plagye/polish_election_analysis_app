@@ -1,0 +1,3 @@
+venv/
+election_app_env/
+.env
