@@ -9,7 +9,7 @@ election_sources = {
     2010: {'url': 'https://en.wikipedia.org/wiki/2010_Polish_presidential_election', 'table_index': 2},
     2015: {'url': 'https://en.wikipedia.org/wiki/2015_Polish_presidential_election', 'table_index': 2},
     2020: {'url': 'https://en.wikipedia.org/wiki/2020_Polish_presidential_election', 'table_index': 1},
-    2025: {'url': 'https://en.wikipedia.org/wiki/2025_Polish_presidential_election', 'table_index': 8}
+    2025: {'url': 'https://en.wikipedia.org/wiki/2025_Polish_presidential_election', 'table_index': 10}
 }
 
 def gather_data():
@@ -28,6 +28,4 @@ def gather_data():
     final_df = pd.concat(all_processed_dfs)
 
     return final_df
-
-
     
