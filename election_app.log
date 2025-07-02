@@ -76,3 +76,53 @@
 2025-06-23 18:59:03,581 [INFO] Generating Std Dev Timeseries plot.
 2025-06-23 18:59:04,359 [INFO] Generating Top 2 Share Timeseries plot.
 2025-06-25 23:54:01,845 [INFO] Starting data gathering process.
+2025-06-26 00:24:49,899 [INFO] Starting data gathering process.
+2025-06-26 00:24:52,910 [INFO] Data gathering completed.
+2025-06-26 00:24:52,921 [INFO] Loaded data from election_results.csv. Shape: (49, 4)
+2025-06-26 00:24:52,998 [INFO] Displaying DataFrame in Gradio.
+2025-06-26 00:24:53,145 [INFO] Temporary data file election_results.csv removed.
+2025-06-26 00:24:53,145 [INFO] Launching Gradio app.
+2025-06-26 00:24:54,024 [INFO] HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-06-26 00:24:55,473 [INFO] HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-06-26 00:24:57,597 [INFO] HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-07-02 13:21:47,249 [INFO] Starting data gathering process.
+2025-07-02 13:21:51,861 [INFO] Data gathering completed.
+2025-07-02 13:21:51,875 [INFO] Loaded data from election_results.csv. Shape: (49, 4)
+2025-07-02 13:21:51,958 [INFO] Displaying DataFrame in Gradio.
+2025-07-02 13:21:52,129 [INFO] Temporary data file election_results.csv removed.
+2025-07-02 13:21:52,130 [INFO] Launching Gradio app.
+2025-07-02 13:21:52,969 [INFO] HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-02 13:21:54,532 [INFO] HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-02 13:21:56,698 [INFO] HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-07-02 13:22:08,673 [INFO] Displaying DataFrame in Gradio.
+2025-07-02 13:22:15,357 [INFO] Generating Top 7 Comparison Bar plot.
+2025-07-02 13:22:16,307 [INFO] Generating Std Dev Timeseries plot.
+2025-07-02 13:22:17,076 [INFO] Generating Top 2 Share Timeseries plot.
+2025-07-03 00:33:02,514 [INFO] Starting data gathering process.
+2025-07-03 00:33:08,040 [INFO] Data gathering completed.
+2025-07-03 00:33:08,050 [INFO] Loaded data from election_results.csv. Shape: (49, 4)
+2025-07-03 00:33:08,122 [INFO] Displaying DataFrame in Gradio.
+2025-07-03 00:33:09,152 [INFO] HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-03 00:34:01,626 [INFO] Starting data gathering process.
+2025-07-03 00:34:04,726 [INFO] Data gathering completed.
+2025-07-03 00:34:04,728 [INFO] Loaded data from election_results.csv. Shape: (49, 4)
+2025-07-03 00:34:04,802 [INFO] Displaying DataFrame in Gradio.
+2025-07-03 00:34:05,753 [INFO] HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-03 00:41:51,582 [INFO] Starting data gathering process.
+2025-07-03 00:41:54,542 [INFO] Data gathering completed.
+2025-07-03 00:41:54,545 [INFO] Loaded data from election_results.csv. Shape: (49, 4)
+2025-07-03 00:41:54,617 [INFO] Displaying DataFrame in Gradio.
+2025-07-03 00:41:54,719 [INFO] Temporary data file election_results.csv removed.
+2025-07-03 00:41:54,719 [INFO] Launching Gradio app.
+2025-07-03 00:41:55,619 [INFO] HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-03 00:41:57,082 [INFO] HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-03 00:41:59,319 [INFO] HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2025-07-03 00:42:17,829 [INFO] Displaying DataFrame in Gradio.
+2025-07-03 00:42:45,454 [INFO] Generating Top 7 Comparison Bar plot.
+2025-07-03 00:42:55,014 [INFO] Generating Top 2 Share Timeseries plot.
+2025-07-03 00:45:05,925 [INFO] Starting data gathering process.
+2025-07-03 00:45:08,948 [INFO] Data gathering completed.
+2025-07-03 00:45:08,950 [INFO] Loaded data from election_results.csv. Shape: (49, 4)
+2025-07-03 00:45:09,023 [INFO] Displaying DataFrame in Gradio.
+2025-07-03 00:45:09,124 [INFO] Temporary data file election_results.csv removed.
+2025-07-03 00:45:09,125 [INFO] Launching Gradio app.

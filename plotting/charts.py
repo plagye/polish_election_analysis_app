@@ -53,3 +53,60 @@ def plot_top2_share_timeseries(data_df):
     ax.legend()
     fig.tight_layout()
     return fig
+
+def election_stats_summary(final_df):
+    """
+    Returns a formatted string with key statistics for top 1 and 2 candidates and the spread among top 7,
+    based on the structure of your Jupyter notebook code.
+    """
+    # Historical stats for Rank 1 (excluding 2025)
+    historical_rank1 = final_df.xs(1, level='Candidate Rank')['First Round %']
+    historical_rank1 = historical_rank1.drop(2025, errors='ignore')
+
+    historical_mean_rank1 = historical_rank1.mean()
+    historical_std_rank1 = historical_rank1.std()
+    historical_min_rank1 = historical_rank1.min()
+    historical_max_rank1 = historical_rank1.max()
+
+    # 2025 and other years for Rank 1 and Rank 2
+    perc_2025_r1 = final_df.loc[(2025, 1), 'First Round %'] if (2025, 1) in final_df.index else float('nan')
+    perc_2015_r2 = final_df.loc[(2015, 2), 'First Round %'] if (2015, 2) in final_df.index else float('nan')
+    perc_2010_r2 = final_df.loc[(2010, 2), 'First Round %'] if (2010, 2) in final_df.index else float('nan')
+    perc_2005_r2 = final_df.loc[(2005, 2), 'First Round %'] if (2005, 2) in final_df.index else float('nan')
+    perc_1995_r2 = final_df.loc[(1995, 2), 'First Round %'] if (1995, 2) in final_df.index else float('nan')
+
+    z_score = abs((perc_2025_r1 - historical_mean_rank1) / historical_std_rank1) if not pd.isna(perc_2025_r1) else float('nan')
+
+    # Spread among Top 7
+    plot_final_df = final_df['First Round %'].unstack(level='Candidate Rank')
+    historical_df = plot_final_df[plot_final_df.index != 2025]
+    historical_within_year_std = historical_df.std(axis=1)
+
+    mean_historical_within_year_std = historical_within_year_std.mean()
+    std_historical_within_year_std = historical_within_year_std.std()
+
+    if 2025 in final_df.index.get_level_values(0):
+        percentages_top7_2025 = final_df.loc[2025, 'First Round %'].values
+        std_dev_within_2025 = percentages_top7_2025.std()
+        z_score_of_std = (std_dev_within_2025 - mean_historical_within_year_std) / std_historical_within_year_std
+    else:
+        std_dev_within_2025 = float('nan')
+        z_score_of_std = float('nan')
+
+    # Format output
+    summary = (
+        f"**Historical Mean % for Rank 1 (1995–2020):** {historical_mean_rank1:.2f}%\n"
+        f"**Historical Std Dev for Rank 1 (1995–2020):** {historical_std_rank1:.2f}%\n"
+        f"**Historical Min % for Rank 1 (1995–2020):** {historical_min_rank1:.2f}%\n"
+        f"**Historical Max % for Rank 1 (1995–2020):** {historical_max_rank1:.2f}%\n\n"
+        f"**2025 Percentage for Rank 1:** {perc_2025_r1:.2f}%\n\n"
+        f"**2015 Percentage for Rank 2:** {perc_2015_r2:.2f}%\n"
+        f"**2010 Percentage for Rank 2:** {perc_2010_r2:.2f}%\n"
+        f"**2005 Percentage for Rank 2:** {perc_2005_r2:.2f}%\n"
+        f"**1995 Percentage for Rank 2:** {perc_1995_r2:.2f}%\n\n"
+        f"**Z-score for 2025 Rank 1:** {z_score:.2f}\n\n"
+        f"**Mean of historical within-year Std Devs (Top 7):** {mean_historical_within_year_std:.2f}%\n"
+        f"**Standard Deviation of percentages among Top 7 in 2025:** {std_dev_within_2025:.2f}%\n"
+        f"**Z-score for the spread (std dev) of Top 7 in 2025:** {z_score_of_std:.2f}\n"
+    )
+    return summary
